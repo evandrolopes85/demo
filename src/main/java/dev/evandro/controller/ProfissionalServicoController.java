@@ -22,13 +22,8 @@ public class ProfissionalServicoController {
 		//Integer servicoId = 1; 
 		ArrayList<ProfissionalServicoDTO> res = service.recuperarTodos();//idProfissional, servicoId);
 		
-		for (ProfissionalServicoDTO profissionalServicoDTO : res) {
-			System.out.println(profissionalServicoDTO.getIdProfissional() + ": " + profissionalServicoDTO.getIdServico());
-		}
-		
-		System.out.println(res);
 		if(res != null) {
-			ResponseEntity.ok(res);
+			return ResponseEntity.ok(res);
 		}
 		
 		return ResponseEntity.badRequest().build();
